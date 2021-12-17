@@ -86,6 +86,10 @@ dbus
 2.12
 file:///home/khangle/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/dbus-0.6.6/
 file:///home/khangle/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/dbus-0.6.6/lib/
+dio
+2.12
+file:///home/khangle/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/dio-4.0.4/
+file:///home/khangle/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/dio-4.0.4/lib/
 email_auth
 2.12
 file:///home/khangle/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/email_auth-0.0.1+4/
@@ -238,6 +242,10 @@ google_fonts
 2.12
 file:///home/khangle/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/google_fonts-2.1.0/
 file:///home/khangle/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/google_fonts-2.1.0/lib/
+google_mobile_ads
+2.12
+file:///home/khangle/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/google_mobile_ads-1.0.1/
+file:///home/khangle/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/google_mobile_ads-1.0.1/lib/
 graphs
 2.12
 file:///home/khangle/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/graphs-2.0.0/

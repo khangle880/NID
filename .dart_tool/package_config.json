@@ -128,6 +128,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "dio",
+      "rootUri": "file:///home/khangle/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/dio-4.0.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "email_auth",
       "rootUri": "file:///home/khangle/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/email_auth-0.0.1+4",
       "packageUri": "lib/",
@@ -370,6 +376,12 @@
     {
       "name": "google_fonts",
       "rootUri": "file:///home/khangle/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/google_fonts-2.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "google_mobile_ads",
+      "rootUri": "file:///home/khangle/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/google_mobile_ads-1.0.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -740,7 +752,7 @@
       "languageVersion": "2.12"
     }
   ],
-  "generated": "2021-12-17T14:01:07.741583Z",
+  "generated": "2021-12-17T19:26:56.791617Z",
   "generator": "pub",
   "generatorVersion": "2.14.4"
 }
