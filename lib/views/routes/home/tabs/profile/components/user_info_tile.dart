@@ -28,7 +28,7 @@ class _StateUserInfoTile extends State<UserInfoTile> {
 
   void createRewardedAd() {
     RewardedAd.load(
-        adUnitId: "ca-app-pub-7302379484663726/9930879697",
+        adUnitId: RewardedAd.testAdUnitId,
         request: AdRequest(),
         rewardedAdLoadCallback: RewardedAdLoadCallback(onAdLoaded: (ad) {
           rewardedAd = ad;

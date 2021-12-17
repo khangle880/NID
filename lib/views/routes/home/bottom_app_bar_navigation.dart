@@ -61,7 +61,7 @@ class FABBottomAppBarState extends State<FABBottomAppBar> {
   void loadStaticAd() {
     staticAd = BannerAd(
         size: AdSize.banner,
-        adUnitId: "ca-app-pub-7302379484663726/8633275747",
+        adUnitId: BannerAd.testAdUnitId,
         listener: BannerAdListener(onAdLoaded: (ad) {
           staticAdsLoaded = true;
           setState(() {});
@@ -76,7 +76,7 @@ class FABBottomAppBarState extends State<FABBottomAppBar> {
   void loadInlineAd() {
     inlineAd = BannerAd(
         size: AdSize.banner,
-        adUnitId: "ca-app-pub-7302379484663726/8633275747",
+        adUnitId: BannerAd.testAdUnitId,
         listener: BannerAdListener(onAdLoaded: (ad) {
           inlineAdsLoaded = true;
           setState(() {});
@@ -99,7 +99,7 @@ class FABBottomAppBarState extends State<FABBottomAppBar> {
 
   void createInterstialAd() {
     InterstitialAd.load(
-        adUnitId: "ca-app-pub-7302379484663726/4227304489",
+        adUnitId: InterstitialAd.testAdUnitId,
         request: request,
         adLoadCallback: InterstitialAdLoadCallback(onAdLoaded: (ad) {
           interstitialAd = ad;
