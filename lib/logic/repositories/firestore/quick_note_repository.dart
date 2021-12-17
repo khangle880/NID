@@ -1,14 +1,19 @@
+// 🎯 Dart imports:
 import 'dart:async';
 import 'dart:developer';
 
+// 🐦 Flutter imports:
+import 'package:flutter/material.dart';
+
+// 📦 Package imports:
+import 'package:async/async.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:rxdart/rxdart.dart';
+
+// 🌎 Project imports:
 import '../../models/check_list.dart';
 import '../../models/note.dart';
 import '../../models/quick_note.dart';
-import 'package:async/async.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/material.dart';
-import 'package:rxdart/rxdart.dart';
-
 import 'base_firestore_repository.dart';
 
 class QuickNoteRepository extends FirestoreRepository<QuickNote> {

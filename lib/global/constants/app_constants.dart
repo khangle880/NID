@@ -1,7 +1,6 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
-
 /// Color constants use for app
 class ColorConstants {
   /// Primary Color constant

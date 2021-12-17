@@ -1,5 +1,16 @@
+// 🎯 Dart imports:
 import 'dart:developer';
 
+// 🐦 Flutter imports:
+import 'package:flutter/material.dart';
+
+// 📦 Package imports:
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:provider/provider.dart';
+
+// 🌎 Project imports:
 import 'package:nid/logic/blocs/authentication/authentication_bloc.dart';
 import 'package:nid/logic/blocs/firestore/firestore_bloc.dart';
 import 'package:nid/logic/blocs/process_state.dart';
@@ -8,16 +19,10 @@ import 'package:nid/logic/models/public_user_info.dart';
 import 'package:nid/logic/repositories/firestore/public_user_info_repository.dart';
 import 'package:nid/views/utils/extensions/flush_bar.dart';
 import 'package:nid/views/utils/extensions/view_extensions.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:image_picker/image_picker.dart';
-import 'package:provider/provider.dart';
-
 import 'components/task_counter.dart';
+import 'components/user_info_tile.dart';
 import 'components/work_list_counter.dart';
 import 'components/work_list_statistic.dart';
-import 'components/user_info_tile.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);

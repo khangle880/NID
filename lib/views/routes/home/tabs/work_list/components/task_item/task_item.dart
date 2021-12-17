@@ -1,13 +1,17 @@
+// 🐦 Flutter imports:
+import 'package:flutter/material.dart';
+
+// 📦 Package imports:
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
+
+// 🌎 Project imports:
 import 'package:nid/logic/blocs/process_state.dart';
 import 'package:nid/logic/blocs/task/process_task/process_task_bloc.dart';
 import 'package:nid/logic/cubits/work_list/work_list_cubit.dart';
 import 'package:nid/logic/models/task.dart';
 import 'package:nid/logic/repositories/firestore/task_repository.dart';
 import 'package:nid/views/utils/extensions/flush_bar.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_slidable/flutter_slidable.dart';
-
 import 'delete_action.dart';
 import 'edit_action.dart';
 import 'item_body.dart';

@@ -1,6 +1,8 @@
-import '../../models/public_user_info.dart';
+// 📦 Package imports:
 import 'package:cloud_firestore/cloud_firestore.dart';
 
+// 🌎 Project imports:
+import '../../models/public_user_info.dart';
 import 'base_firestore_repository.dart';
 
 class PublicUserInfoRepository extends FirestoreRepository<PublicUserInfo> {

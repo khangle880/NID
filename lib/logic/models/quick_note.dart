@@ -1,9 +1,12 @@
+// 🎯 Dart imports:
 import 'dart:developer';
 
-import 'firestore_doc.dart';
+// 📦 Package imports:
 import 'package:equatable/equatable.dart';
 
+// 🌎 Project imports:
 import 'check_list.dart';
+import 'firestore_doc.dart';
 import 'note.dart';
 
 abstract class QuickNote extends FirestoreDoc {

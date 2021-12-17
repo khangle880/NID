@@ -1,12 +1,17 @@
+// 🐦 Flutter imports:
+import 'package:flutter/material.dart';
+
+// 📦 Package imports:
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
+
+// 🌎 Project imports:
 import 'package:nid/logic/blocs/firestore/firestore_bloc.dart';
 import 'package:nid/logic/blocs/task/get_task/task_bloc.dart';
 import 'package:nid/logic/models/quick_note.dart';
 import 'package:nid/logic/models/task.dart';
 import 'package:nid/views/utils/extensions/view_extensions.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:provider/provider.dart';
 
 class WorkListCounter extends StatelessWidget {
   const WorkListCounter({Key? key}) : super(key: key);

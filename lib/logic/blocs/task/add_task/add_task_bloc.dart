@@ -1,15 +1,21 @@
+// 🎯 Dart imports:
 import 'dart:async';
 import 'dart:developer';
 
-import '../../process_state.dart';
+// 🐦 Flutter imports:
+import 'package:flutter/material.dart';
+
+// 📦 Package imports:
+import 'package:bloc/bloc.dart';
+import 'package:equatable/equatable.dart';
+
+// 🌎 Project imports:
 import '../../../models/public_user_info.dart';
 import '../../../models/task.dart';
 import '../../../repositories/firestore/task_repository.dart';
 import '../../../repositories/user_repository.dart';
 import '../../../utils/extensions/logic_extensions.dart';
-import 'package:bloc/bloc.dart';
-import 'package:equatable/equatable.dart';
-import 'package:flutter/material.dart';
+import '../../process_state.dart';
 
 part 'add_task_event.dart';
 part 'add_task_state.dart';

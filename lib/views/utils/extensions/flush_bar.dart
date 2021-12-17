@@ -1,5 +1,8 @@
-import 'package:another_flushbar/flushbar.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
+
+// 📦 Package imports:
+import 'package:another_flushbar/flushbar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 extension ExpandedFlushbar on Flushbar {

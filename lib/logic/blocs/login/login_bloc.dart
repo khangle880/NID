@@ -1,9 +1,13 @@
+// 🎯 Dart imports:
 import 'dart:async';
 
-import '../../repositories/user_repository.dart';
-import '../../utils/errors/auth_error.dart';
+// 📦 Package imports:
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+
+// 🌎 Project imports:
+import '../../repositories/user_repository.dart';
+import '../../utils/errors/auth_error.dart';
 
 part 'login_event.dart';
 part 'login_state.dart';

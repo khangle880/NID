@@ -1,10 +1,15 @@
+// 🐦 Flutter imports:
+import 'package:flutter/material.dart';
+
+// 📦 Package imports:
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+// 🌎 Project imports:
 import 'package:nid/logic/blocs/authentication/authentication_bloc.dart';
 import 'package:nid/logic/blocs/process_quick_note/process_quick_note_bloc.dart';
 import 'package:nid/logic/models/check_list.dart';
 import 'package:nid/views/utils/extensions/view_extensions.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CheckListItem extends StatelessWidget {
   const CheckListItem({Key? key, required this.item}) : super(key: key);

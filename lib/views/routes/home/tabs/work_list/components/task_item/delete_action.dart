@@ -1,11 +1,16 @@
+// 🐦 Flutter imports:
+import 'package:flutter/material.dart';
+
+// 📦 Package imports:
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
+
+// 🌎 Project imports:
 import 'package:nid/logic/blocs/process_firestore_doc/process_firestore_doc_bloc.dart';
 import 'package:nid/logic/blocs/task/process_task/process_task_bloc.dart';
 import 'package:nid/logic/models/task.dart';
 import 'package:nid/views/utils/extensions/view_extensions.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_slidable/flutter_slidable.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 class DeleteAction extends StatelessWidget {
   const DeleteAction({

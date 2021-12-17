@@ -1,5 +1,8 @@
-import 'package:equatable/equatable.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
+
+// 📦 Package imports:
+import 'package:equatable/equatable.dart';
 
 typedef RemovedItemBuilder<T> = Widget Function(
     BuildContext context, T item, Animation<double> animation);

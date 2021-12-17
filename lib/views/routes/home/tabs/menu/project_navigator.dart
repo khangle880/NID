@@ -1,7 +1,9 @@
-import 'package:nid/views/routes/exception/exception_page.dart';
-import 'package:nid/views/routes/home/tabs/work_list/work_list_page.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
+// 🌎 Project imports:
+import 'package:nid/views/routes/exception/exception_page.dart';
+import 'package:nid/views/routes/home/tabs/work_list/work_list_page.dart';
 import 'project_page.dart';
 
 class ProjectNav extends StatelessWidget {

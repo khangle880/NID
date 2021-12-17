@@ -1,10 +1,15 @@
+// 🎯 Dart imports:
 import 'dart:developer';
 
-import 'package:nid/global/constants/assets_path.dart';
-import 'package:nid/routing/app_routes.dart';
-import 'package:nid/routing/routes.dart';
-import 'package:nid/views/widgets/simple_rive_widget.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
+
+// 📦 Package imports:
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+// 🌎 Project imports:
+import 'package:nid/global/constants/assets_path.dart';
 import 'package:nid/logic/blocs/firestore/firestore_bloc.dart';
 import 'package:nid/logic/blocs/task/get_task/task_bloc.dart';
 import 'package:nid/logic/models/project.dart';
@@ -15,8 +20,9 @@ import 'package:nid/logic/repositories/firestore/project_repository.dart';
 import 'package:nid/logic/repositories/firestore/public_user_info_repository.dart';
 import 'package:nid/logic/repositories/firestore/quick_note_repository.dart';
 import 'package:nid/logic/repositories/firestore/task_repository.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:nid/routing/app_routes.dart';
+import 'package:nid/routing/routes.dart';
+import 'package:nid/views/widgets/simple_rive_widget.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key, required this.uid}) : super(key: key);

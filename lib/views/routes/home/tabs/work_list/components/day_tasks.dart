@@ -1,9 +1,13 @@
-import 'package:nid/logic/models/task.dart';
-import 'package:nid/views/utils/extensions/view_extensions.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:nid/logic/utils/extensions/logic_extensions.dart';
 
+// 📦 Package imports:
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+// 🌎 Project imports:
+import 'package:nid/logic/models/task.dart';
+import 'package:nid/logic/utils/extensions/logic_extensions.dart';
+import 'package:nid/views/utils/extensions/view_extensions.dart';
 import 'task_item/task_item.dart';
 
 class DayTasks extends StatefulWidget {

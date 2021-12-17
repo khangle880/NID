@@ -1,11 +1,15 @@
+// 🐦 Flutter imports:
+import 'package:flutter/material.dart';
+
+// 📦 Package imports:
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+// 🌎 Project imports:
 import 'package:nid/logic/blocs/add_note/add_note_bloc.dart';
 import 'package:nid/logic/repositories/firestore/quick_note_repository.dart';
 import 'package:nid/logic/repositories/user_repository.dart';
 import 'package:nid/views/utils/extensions/view_extensions.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'components/add_note_form.dart';
 
 class AddNotePage extends StatefulWidget {

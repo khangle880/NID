@@ -48,9 +48,9 @@ dependencies:
 
 flutter_native_splash:
   color: "#FFFFFF"
-  image: assets/icons/launcher_icon.png
+  image: assets/images/splash.png
   color_dart: "#1a1a1a"
-  image_dart: assets/icons/launcher_icon.png
+  image_dart: assets/images/splash.png
   android: true
   ios: true
 
@@ -58,6 +58,9 @@ flutter_icons:
   android: true
   ios: true
   image_path: "assets/icons/launcher_icon.png"
+
+import_sorter:
+  emojis: true # Optional, defaults to false
   
 
 dev_dependencies:

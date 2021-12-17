@@ -1,3 +1,4 @@
+// 🌎 Project imports:
 import 'firestore_doc.dart';
 
 class PublicUserInfo extends FirestoreDoc {

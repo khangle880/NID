@@ -1,26 +1,31 @@
+// 🎯 Dart imports:
 import 'dart:developer';
 
+// 🐦 Flutter imports:
+import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+
+// 📦 Package imports:
+import 'package:cool_alert/cool_alert.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
+
+// 🌎 Project imports:
 import 'package:nid/global/constants/assets_path.dart';
-import 'package:nid/logic/blocs/task/add_task/add_task_bloc.dart';
-import 'package:nid/logic/blocs/process_state.dart';
 import 'package:nid/logic/blocs/firestore/firestore_bloc.dart';
+import 'package:nid/logic/blocs/process_state.dart';
+import 'package:nid/logic/blocs/task/add_task/add_task_bloc.dart';
 import 'package:nid/logic/models/project.dart';
 import 'package:nid/logic/models/public_user_info.dart';
+import 'package:nid/logic/utils/extensions/logic_extensions.dart';
 import 'package:nid/views/routes/home/add_pages/add_task/components/add_member/add_member.dart';
 import 'package:nid/views/routes/home/add_pages/add_task/components/due_date_picker.dart';
 import 'package:nid/views/utils/extensions/view_extensions.dart';
+import 'package:nid/views/widgets/empty_view.dart';
 import 'package:nid/views/widgets/network_avatar.dart';
 import 'package:nid/views/widgets/rounded_button.dart';
-import 'package:nid/views/widgets/empty_view.dart';
-import 'package:cool_alert/cool_alert.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:provider/provider.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:nid/logic/utils/extensions/logic_extensions.dart';
-
 import 'description_container.dart';
 
 class DetailPanel extends StatelessWidget {

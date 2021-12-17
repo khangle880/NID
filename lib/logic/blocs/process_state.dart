@@ -1,3 +1,4 @@
+// 📦 Package imports:
 import 'package:equatable/equatable.dart';
 
 abstract class ProcessState extends Equatable {

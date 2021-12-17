@@ -1,6 +1,9 @@
-import 'firestore_doc.dart';
+// 📦 Package imports:
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:equatable/equatable.dart';
+
+// 🌎 Project imports:
+import 'firestore_doc.dart';
 
 class Task extends FirestoreDoc {
   final String assignedToId;

@@ -1,16 +1,22 @@
+// 🎯 Dart imports:
 import 'dart:async';
 
-import '../../../global/constants/app_constants.dart';
-import '../process_state.dart';
-import '../../models/project.dart';
-import '../../repositories/firestore/project_repository.dart';
-import '../../../views/utils/extensions/view_extensions.dart';
-import '../../utils/extensions/logic_extensions.dart';
-import '../../repositories/user_repository.dart';
-import 'package:bloc/bloc.dart';
-import 'package:equatable/equatable.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+// 📦 Package imports:
+import 'package:bloc/bloc.dart';
+import 'package:equatable/equatable.dart';
+
+// 🌎 Project imports:
+import '../../../global/constants/app_constants.dart';
+import '../../../views/utils/extensions/view_extensions.dart';
+import '../../models/project.dart';
+import '../../repositories/firestore/project_repository.dart';
+import '../../repositories/user_repository.dart';
+import '../../utils/extensions/logic_extensions.dart';
+import '../process_state.dart';
 
 part 'add_project_event.dart';
 part 'add_project_state.dart';

@@ -1,4 +1,7 @@
+// 🐦 Flutter imports:
 import 'package:flutter/widgets.dart';
+
+// 📦 Package imports:
 import 'package:table_calendar/table_calendar.dart';
 
 class CalendarProvider with ChangeNotifier {

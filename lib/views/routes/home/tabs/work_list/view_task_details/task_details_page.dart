@@ -1,10 +1,14 @@
+// 🐦 Flutter imports:
+import 'package:flutter/material.dart';
+
+// 📦 Package imports:
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+// 🌎 Project imports:
 import 'package:nid/logic/blocs/task/process_task/process_task_bloc.dart';
 import 'package:nid/views/routes/home/add_pages/add_check_list/components/add_check_list_form.dart';
 import 'package:nid/views/utils/extensions/view_extensions.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter/material.dart';
-
 import 'components/task_details_form.dart';
 
 class TaskDetailsPage extends StatefulWidget {

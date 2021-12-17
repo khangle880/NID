@@ -1,5 +1,8 @@
-import '../../models/task.dart';
+// 📦 Package imports:
 import "package:collection/collection.dart";
+
+// 🌎 Project imports:
+import '../../models/task.dart';
 import 'logic_extensions.dart';
 
 enum OptionTaskStatusFilter { none, incomplete, completed }

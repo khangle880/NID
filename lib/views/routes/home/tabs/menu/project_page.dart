@@ -1,10 +1,14 @@
-import 'package:nid/logic/blocs/firestore/firestore_bloc.dart';
-import 'package:nid/logic/models/project.dart';
-import 'package:nid/views/utils/extensions/view_extensions.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
+
+// 📦 Package imports:
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+// 🌎 Project imports:
+import 'package:nid/logic/blocs/firestore/firestore_bloc.dart';
+import 'package:nid/logic/models/project.dart';
+import 'package:nid/views/utils/extensions/view_extensions.dart';
 import 'components/open_form_button.dart';
 import 'components/project_item.dart';
 

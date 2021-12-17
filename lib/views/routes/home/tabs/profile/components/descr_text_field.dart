@@ -1,8 +1,13 @@
-import 'package:nid/logic/blocs/profile/profile_bloc.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:nid/views/utils/extensions/view_extensions.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
+
+// 📦 Package imports:
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+// 🌎 Project imports:
+import 'package:nid/logic/blocs/profile/profile_bloc.dart';
+import 'package:nid/views/utils/extensions/view_extensions.dart';
 
 class DescriptionTextField extends StatelessWidget {
   const DescriptionTextField({

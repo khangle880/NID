@@ -1,5 +1,8 @@
-import 'package:nid/views/utils/extensions/view_extensions.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/widgets.dart';
+
+// 🌎 Project imports:
+import 'package:nid/views/utils/extensions/view_extensions.dart';
 
 extension ExpandedTextStyle on TextStyle {
   TextStyle toBlurColor() {

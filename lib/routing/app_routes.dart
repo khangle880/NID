@@ -1,3 +1,7 @@
+// 🐦 Flutter imports:
+import 'package:flutter/material.dart';
+
+// 🌎 Project imports:
 import '../logic/blocs/reset_password/reset_password_bloc.dart';
 import '../logic/blocs/task/process_task/process_task_bloc.dart';
 import '../logic/utils/exceptions/route_exception.dart';
@@ -14,8 +18,6 @@ import '../views/routes/home/home_page.dart';
 import '../views/routes/home/tabs/work_list/view_task_details/task_details_page.dart';
 import '../views/routes/splash/splash_screen.dart';
 import '../views/routes/wrapper/wrapper.dart';
-import 'package:flutter/material.dart';
-
 import 'routes.dart';
 
 class AppRoutes {

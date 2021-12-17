@@ -1,6 +1,10 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
+
+// 📦 Package imports:
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+// 🌎 Project imports:
 import 'package:nid/views/utils/extensions/view_extensions.dart';
 
 /// Theme for app, apply for main, and custom for you

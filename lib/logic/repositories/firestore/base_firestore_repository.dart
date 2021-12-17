@@ -1,7 +1,12 @@
-import '../../models/firestore_doc.dart';
+// 🐦 Flutter imports:
+import 'package:flutter/material.dart';
+
+// 📦 Package imports:
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter/material.dart';
+
+// 🌎 Project imports:
+import '../../models/firestore_doc.dart';
 
 abstract class FirestoreRepository<T extends FirestoreDoc> {
   final FirebaseFirestore _firebaseFirestore;

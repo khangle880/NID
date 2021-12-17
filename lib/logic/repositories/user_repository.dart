@@ -1,8 +1,11 @@
-import '../utils/errors/auth_error.dart';
+// 📦 Package imports:
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:email_auth/email_auth.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+
+// 🌎 Project imports:
+import '../utils/errors/auth_error.dart';
 
 class UserRepository {
   final FirebaseAuth _firebaseAuth;

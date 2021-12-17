@@ -1,5 +1,8 @@
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
+// 📦 Package imports:
 import 'package:rive/rive.dart';
 
 class SimpleRiveWidget extends StatefulWidget {

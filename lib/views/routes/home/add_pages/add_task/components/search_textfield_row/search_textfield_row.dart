@@ -1,7 +1,11 @@
-import 'package:nid/views/routes/home/add_pages/add_task/components/search_textfield_row/project_textfield.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
+
+// 📦 Package imports:
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+// 🌎 Project imports:
+import 'package:nid/views/routes/home/add_pages/add_task/components/search_textfield_row/project_textfield.dart';
 import 'assignee_textfield.dart';
 
 class SearchTextFieldRow extends StatelessWidget {

@@ -1,9 +1,13 @@
-import 'package:nid/logic/blocs/task/add_task/add_task_bloc.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
+
+// 📦 Package imports:
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
+// 🌎 Project imports:
+import 'package:nid/logic/blocs/task/add_task/add_task_bloc.dart';
 import 'detail_panel.dart';
 import 'search_textfield_row/search_textfield_row.dart';
 

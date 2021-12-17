@@ -1,10 +1,12 @@
+// 🎯 Dart imports:
 import 'dart:async';
 
-import '../../process_firestore_doc/process_firestore_doc_bloc.dart';
-import '../../process_state.dart';
+// 🌎 Project imports:
 import '../../../models/task.dart';
 import '../../../repositories/firestore/base_firestore_repository.dart';
 import '../../../repositories/firestore/task_repository.dart';
+import '../../process_firestore_doc/process_firestore_doc_bloc.dart';
+import '../../process_state.dart';
 
 part 'process_task_event.dart';
 

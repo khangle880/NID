@@ -1,14 +1,17 @@
-import 'package:nid/global/constants/app_constants.dart';
-import 'package:nid/views/routes/home/tabs/profile/profile_page.dart';
-import 'package:nid/views/routes/home/tabs/quick_note/quick_note_page.dart';
+// 🐦 Flutter imports:
+import 'package:flutter/material.dart';
 
-import 'package:nid/views/utils/extensions/view_extensions.dart';
+// 📦 Package imports:
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+// 🌎 Project imports:
+import 'package:nid/global/constants/app_constants.dart';
 import 'package:nid/views/routes/exception/exception_page.dart';
 import 'package:nid/views/routes/home/add_menu.dart';
 import 'package:nid/views/routes/home/bottom_app_bar_navigation.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
+import 'package:nid/views/routes/home/tabs/profile/profile_page.dart';
+import 'package:nid/views/routes/home/tabs/quick_note/quick_note_page.dart';
+import 'package:nid/views/utils/extensions/view_extensions.dart';
 import 'tabs/menu/project_navigator.dart';
 import 'tabs/work_list/work_list_page.dart';
 

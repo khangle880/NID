@@ -1,7 +1,12 @@
-import 'package:nid/views/utils/extensions/view_extensions.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+
+// 📦 Package imports:
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
+
+// 🌎 Project imports:
+import 'package:nid/views/utils/extensions/view_extensions.dart';
 
 class WalkthroughContent extends StatelessWidget {
   const WalkthroughContent({

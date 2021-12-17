@@ -1,11 +1,13 @@
+// 🎯 Dart imports:
 import 'dart:async';
 
-import '../process_firestore_doc/process_firestore_doc_bloc.dart';
-import '../process_state.dart';
+// 🌎 Project imports:
 import '../../models/check_list.dart';
 import '../../models/quick_note.dart';
 import '../../repositories/firestore/base_firestore_repository.dart';
 import '../../repositories/firestore/quick_note_repository.dart';
+import '../process_firestore_doc/process_firestore_doc_bloc.dart';
+import '../process_state.dart';
 
 part 'process_quick_note_event.dart';
 

@@ -1,14 +1,20 @@
+// 🎯 Dart imports:
 import 'dart:collection';
 
+// 🐦 Flutter imports:
+import 'package:flutter/material.dart';
+
+// 📦 Package imports:
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+// 🌎 Project imports:
 import 'package:nid/global/constants/app_constants.dart';
 import 'package:nid/logic/models/walkthrough.dart';
 import 'package:nid/logic/provider/walkthrough_cache.dart';
-import 'package:nid/views/utils/extensions/view_extensions.dart';
 import 'package:nid/routing/app_routes.dart';
 import 'package:nid/routing/routes.dart';
+import 'package:nid/views/utils/extensions/view_extensions.dart';
 import 'package:nid/views/widgets/rounded_button.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'walkthrough_content.dart';
 import 'wave.dart';
 

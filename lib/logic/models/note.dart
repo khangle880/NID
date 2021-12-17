@@ -1,5 +1,8 @@
-import 'quick_note.dart';
+// 📦 Package imports:
 import 'package:cloud_firestore/cloud_firestore.dart';
+
+// 🌎 Project imports:
+import 'quick_note.dart';
 
 class Note extends QuickNote {
   final String description;

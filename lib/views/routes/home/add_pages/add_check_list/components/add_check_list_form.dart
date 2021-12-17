@@ -1,3 +1,12 @@
+// 🐦 Flutter imports:
+import 'package:flutter/material.dart';
+
+// 📦 Package imports:
+import 'package:cool_alert/cool_alert.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+// 🌎 Project imports:
 import 'package:nid/logic/blocs/add_check_list/add_check_list_bloc.dart';
 import 'package:nid/logic/blocs/process_state.dart';
 import 'package:nid/logic/models/animated_list_modal.dart';
@@ -7,10 +16,6 @@ import 'package:nid/logic/repositories/user_repository.dart';
 import 'package:nid/views/utils/extensions/view_extensions.dart';
 import 'package:nid/views/widgets/list_color_selection.dart';
 import 'package:nid/views/widgets/rounded_button.dart';
-import 'package:cool_alert/cool_alert.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AddCheckListForm extends StatefulWidget {
   const AddCheckListForm({Key? key}) : super(key: key);

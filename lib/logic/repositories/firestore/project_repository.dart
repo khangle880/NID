@@ -1,6 +1,8 @@
-import '../../models/project.dart';
+// 📦 Package imports:
 import 'package:cloud_firestore/cloud_firestore.dart';
 
+// 🌎 Project imports:
+import '../../models/project.dart';
 import 'base_firestore_repository.dart';
 
 class ProjectRepository extends FirestoreRepository<Project> {

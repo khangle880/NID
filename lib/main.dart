@@ -1,3 +1,18 @@
+// 🐦 Flutter imports:
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
+// 📦 Package imports:
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hydrated_bloc/hydrated_bloc.dart';
+import 'package:path_provider/path_provider.dart';
+
+// 🌎 Project imports:
+import 'global/theme/bloc/theme_bloc.dart';
+import 'logic/blocs/authentication/authentication_bloc.dart';
 import 'logic/blocs/simple_bloc_observer.dart';
 import 'logic/models/quick_note.dart';
 import 'logic/repositories/firestore/project_repository.dart';
@@ -7,17 +22,6 @@ import 'logic/repositories/firestore/task_repository.dart';
 import 'logic/repositories/user_repository.dart';
 import 'routing/app_routes.dart';
 import 'routing/routes.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:hydrated_bloc/hydrated_bloc.dart';
-import 'package:path_provider/path_provider.dart';
-
-import 'global/theme/bloc/theme_bloc.dart';
-import 'logic/blocs/authentication/authentication_bloc.dart';
 
 Future main() async {
   /// Ensure Initialized

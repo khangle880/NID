@@ -36,7 +36,7 @@ class AssetPathConstants {
   static const String locationRive = "assets/rives/location.riv";
 
   /// Simple animation
-  static const String splashSimpleAnimation = "Animation 1";
+  static const String splashSimpleAnimation = "Thumbnail";
   static const String loader1SimpleAnimation = "Animation 1";
   static const String loader2SimpleAnimation = "infinite 2";
   static const String loadingCatSimpleAnimation = "Animation 1";

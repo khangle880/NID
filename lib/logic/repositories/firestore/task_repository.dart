@@ -1,12 +1,15 @@
+// 🎯 Dart imports:
 import 'dart:developer';
 
+// 📦 Package imports:
+import 'package:cloud_firestore/cloud_firestore.dart';
+
+// 🌎 Project imports:
 import '../../models/project.dart';
 import '../../models/task.dart';
-import 'project_repository.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import '../../utils/extensions/logic_extensions.dart';
-
 import 'base_firestore_repository.dart';
+import 'project_repository.dart';
 
 class TaskRepository extends FirestoreRepository<Task> {
   TaskRepository({

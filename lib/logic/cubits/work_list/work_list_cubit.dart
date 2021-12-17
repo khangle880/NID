@@ -1,7 +1,10 @@
-import '../../models/task.dart';
+// 📦 Package imports:
 import 'package:bloc/bloc.dart';
-import '../../utils/extensions/logic_extensions.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
+
+// 🌎 Project imports:
+import '../../models/task.dart';
+import '../../utils/extensions/logic_extensions.dart';
 
 enum WorkListState {
   processing,

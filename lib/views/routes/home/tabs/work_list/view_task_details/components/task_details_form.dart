@@ -1,13 +1,19 @@
+// 🎯 Dart imports:
 import 'dart:ui';
 
+// 🐦 Flutter imports:
+import 'package:flutter/material.dart';
+
+// 📦 Package imports:
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+// 🌎 Project imports:
 import 'package:nid/logic/blocs/firestore/firestore_bloc.dart';
 import 'package:nid/logic/blocs/task/get_task/task_bloc.dart';
 import 'package:nid/logic/models/task.dart';
 import 'package:nid/views/routes/home/tabs/work_list/view_task_details/components/task_detail_body.dart';
 import 'package:nid/views/routes/home/tabs/work_list/view_task_details/components/task_details_menu.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 class TaskDetailsForm extends StatefulWidget {
   const TaskDetailsForm({Key? key}) : super(key: key);

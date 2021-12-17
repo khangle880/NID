@@ -1,10 +1,15 @@
-import 'package:nid/logic/provider/calendar.dart';
-import 'package:nid/views/utils/extensions/view_extensions.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
+
+// 📦 Package imports:
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:table_calendar/table_calendar.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+// 🌎 Project imports:
+import 'package:nid/logic/provider/calendar.dart';
+import 'package:nid/views/utils/extensions/view_extensions.dart';
 
 class Calendar extends StatefulWidget {
   const Calendar({Key? key, required this.eventLoader}) : super(key: key);

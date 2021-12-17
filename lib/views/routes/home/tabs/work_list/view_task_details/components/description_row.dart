@@ -1,9 +1,14 @@
-import 'package:nid/global/constants/assets_path.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
+
+// 📦 Package imports:
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:nid/views/utils/extensions/view_extensions.dart';
-import 'package:nid/logic/utils/extensions/logic_extensions.dart';
 import 'package:flutter_svg/svg.dart';
+
+// 🌎 Project imports:
+import 'package:nid/global/constants/assets_path.dart';
+import 'package:nid/logic/utils/extensions/logic_extensions.dart';
+import 'package:nid/views/utils/extensions/view_extensions.dart';
 
 class DescriptionRow extends StatelessWidget {
   const DescriptionRow({

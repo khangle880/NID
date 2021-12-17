@@ -1,14 +1,19 @@
+// 🐦 Flutter imports:
+import 'package:flutter/material.dart';
+
+// 📦 Package imports:
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+// 🌎 Project imports:
 import 'package:nid/logic/blocs/reset_password/reset_password_bloc.dart';
 import 'package:nid/logic/utils/validator/auth_validators.dart';
 import 'package:nid/routing/app_routes.dart';
 import 'package:nid/routing/routes.dart';
+import 'package:nid/views/utils/extensions/view_extensions.dart';
 import 'package:nid/views/widgets/normal_text_field.dart';
 import 'package:nid/views/widgets/obscure_text_field.dart';
 import 'package:nid/views/widgets/rounded_button.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:nid/views/utils/extensions/view_extensions.dart';
 
 class ResetPasswordForm extends StatefulWidget {
   const ResetPasswordForm({Key? key}) : super(key: key);

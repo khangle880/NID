@@ -1,6 +1,8 @@
+// 📦 Package imports:
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:equatable/equatable.dart';
 
+// 🌎 Project imports:
 import 'quick_note.dart';
 
 class CheckList extends QuickNote {

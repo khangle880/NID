@@ -1,18 +1,22 @@
+// 🐦 Flutter imports:
+import 'package:flutter/material.dart';
+
+// 📦 Package imports:
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
+// 🌎 Project imports:
 import 'package:nid/global/constants/assets_path.dart';
 import 'package:nid/logic/blocs/task/get_task/task_bloc.dart';
 import 'package:nid/logic/blocs/task/process_task/process_task_bloc.dart';
+import 'package:nid/logic/utils/extensions/logic_extensions.dart';
 import 'package:nid/views/routes/home/tabs/work_list/view_task_details/components/more_detail_body.dart';
 import 'package:nid/views/routes/home/tabs/work_list/view_task_details/components/project_row.dart';
 import 'package:nid/views/utils/extensions/flush_bar.dart';
+import 'package:nid/views/utils/extensions/view_extensions.dart';
 import 'package:nid/views/widgets/empty_view.dart';
 import 'package:nid/views/widgets/rounded_button.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:nid/views/utils/extensions/view_extensions.dart';
-import 'package:nid/logic/utils/extensions/logic_extensions.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-
 import 'assigned_to_row.dart';
 import 'description_row.dart';
 import 'due_date_row.dart';

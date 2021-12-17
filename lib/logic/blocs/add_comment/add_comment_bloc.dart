@@ -1,15 +1,19 @@
+// 🎯 Dart imports:
 import 'dart:async';
 import 'dart:io';
 
-import '../process_state.dart';
-import '../../models/comment.dart';
-import '../../repositories/firestore/comment_repository.dart';
-import '../../repositories/user_repository.dart';
+// 📦 Package imports:
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:firebase_storage/firebase_storage.dart';
-import 'package:path/path.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:path/path.dart';
+
+// 🌎 Project imports:
+import '../../models/comment.dart';
+import '../../repositories/firestore/comment_repository.dart';
+import '../../repositories/user_repository.dart';
+import '../process_state.dart';
 
 part 'add_comment_event.dart';
 part 'add_comment_state.dart';

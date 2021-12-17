@@ -1,14 +1,18 @@
-import 'package:nid/logic/blocs/task/add_task/add_task_bloc.dart';
-import 'package:nid/logic/blocs/firestore/firestore_bloc.dart';
-import 'package:nid/logic/models/public_user_info.dart';
-import 'package:nid/views/utils/extensions/view_extensions.dart';
-import 'package:nid/views/widgets/network_avatar.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
+
+// 📦 Package imports:
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
-import 'package:nid/logic/utils/extensions/list_extensions.dart';
 
+// 🌎 Project imports:
+import 'package:nid/logic/blocs/firestore/firestore_bloc.dart';
+import 'package:nid/logic/blocs/task/add_task/add_task_bloc.dart';
+import 'package:nid/logic/models/public_user_info.dart';
+import 'package:nid/logic/utils/extensions/list_extensions.dart';
+import 'package:nid/views/utils/extensions/view_extensions.dart';
+import 'package:nid/views/widgets/network_avatar.dart';
 import 'suggest_member_dialog.dart';
 
 class AddMember extends StatefulWidget {

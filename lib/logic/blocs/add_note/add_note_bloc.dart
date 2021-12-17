@@ -1,15 +1,21 @@
+// 🎯 Dart imports:
 import 'dart:async';
 
+// 🐦 Flutter imports:
+import 'package:flutter/material.dart';
+
+// 📦 Package imports:
+import 'package:bloc/bloc.dart';
+import 'package:equatable/equatable.dart';
+
+// 🌎 Project imports:
 import '../../../global/constants/app_constants.dart';
-import '../process_state.dart';
+import '../../../views/utils/extensions/view_extensions.dart';
 import '../../models/note.dart';
 import '../../repositories/firestore/quick_note_repository.dart';
 import '../../repositories/user_repository.dart';
-import '../../../views/utils/extensions/view_extensions.dart';
 import '../../utils/extensions/logic_extensions.dart';
-import 'package:bloc/bloc.dart';
-import 'package:equatable/equatable.dart';
-import 'package:flutter/material.dart';
+import '../process_state.dart';
 
 part 'add_note_event.dart';
 part 'add_note_state.dart';

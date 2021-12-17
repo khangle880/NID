@@ -1,12 +1,16 @@
+// 🐦 Flutter imports:
+import 'package:flutter/material.dart';
+
+// 📦 Package imports:
+import 'package:provider/provider.dart';
+
+// 🌎 Project imports:
 import 'package:nid/logic/models/task.dart';
 import 'package:nid/logic/provider/calendar.dart';
+import 'package:nid/logic/utils/extensions/logic_extensions.dart';
 import 'package:nid/logic/utils/queries/filter.dart';
 import 'package:nid/views/widgets/calendar.dart';
 import 'package:nid/views/widgets/empty_view.dart';
-import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:nid/logic/utils/extensions/logic_extensions.dart';
-
 import 'day_tasks.dart';
 
 class MonthTabView extends StatefulWidget {

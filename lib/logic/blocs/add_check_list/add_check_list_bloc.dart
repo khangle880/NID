@@ -1,16 +1,22 @@
+// 🎯 Dart imports:
 import 'dart:async';
 
-import '../../../global/constants/app_constants.dart';
-import '../process_state.dart';
-import '../../models/check_list.dart';
-import '../../models/animated_list_modal.dart';
-import '../../repositories/firestore/quick_note_repository.dart';
-import '../../repositories/user_repository.dart';
-import '../../../views/utils/extensions/view_extensions.dart';
-import '../../utils/extensions/logic_extensions.dart';
+// 🐦 Flutter imports:
+import 'package:flutter/material.dart';
+
+// 📦 Package imports:
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:flutter/material.dart';
+
+// 🌎 Project imports:
+import '../../../global/constants/app_constants.dart';
+import '../../../views/utils/extensions/view_extensions.dart';
+import '../../models/animated_list_modal.dart';
+import '../../models/check_list.dart';
+import '../../repositories/firestore/quick_note_repository.dart';
+import '../../repositories/user_repository.dart';
+import '../../utils/extensions/logic_extensions.dart';
+import '../process_state.dart';
 
 part 'add_check_list_event.dart';
 part 'add_check_list_state.dart';
