@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:dio/dio.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
@@ -94,6 +95,40 @@ class NotificationHelper {
       alert: true,
       badge: true,
       sound: true,
+    );
+  }
+
+  Future<void> sendNotification(String subject, {String? title}) async {
+    final postUrl = 'https://fcm.googleapis.com/fcm/send';
+
+    final topic = "new_task";
+    String toParams = "/topics/" + topic;
+    // final token = await FirebaseMessaging.instance.getToken();
+
+    final data = {
+      "notification": {"body": subject, "title": title ?? "NID"},
+      "priority": "high",
+      "data": {
+        "click_action": "FLUTTER_NOTIFICATION_CLICK",
+        "id": "1",
+        "status": "done",
+        "sound": 'default',
+        "screen": "new task",
+      },
+      "to": toParams,
+    };
+    // print(token);
+
+    final headers = {
+      'content-type': 'application/json',
+      'Authorization':
+          'key=AAAADG8gLdg:APA91bHdJyYgIBbiPPjMKIMZgdWx8-ZyIQxKNxmrsDw9yig4ysgIjrdtw415eoxSy1ZgoaI1lIIeUsODkOfFcuCxJtbNU9RuaeSFLt5CJOu5J3F7FDojoQVhe19hWKXLK4b1xLnjoKAk'
+    };
+
+    await Dio().post(
+      postUrl,
+      data: json.encode(data),
+      options: Options(headers: headers),
     );
   }
 

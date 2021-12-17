@@ -13,6 +13,7 @@ import 'package:nid/logic/models/animated_list_modal.dart';
 import 'package:nid/logic/models/check_list.dart';
 import 'package:nid/logic/repositories/firestore/quick_note_repository.dart';
 import 'package:nid/logic/repositories/user_repository.dart';
+import 'package:nid/logic/utils/helpers/notification_helper.dart';
 import 'package:nid/views/utils/extensions/view_extensions.dart';
 import 'package:nid/views/widgets/list_color_selection.dart';
 import 'package:nid/views/widgets/rounded_button.dart';
@@ -242,6 +243,8 @@ class _AddCheckListFormState extends State<AddCheckListForm> {
                       type: CoolAlertType.success,
                       text: 'Add CheckList Successfully!',
                     );
+                    NotificationHelper()
+                        .sendNotification("You have created new check list");
                   }
                 },
                 builder: (context, state) => RoundedButton(

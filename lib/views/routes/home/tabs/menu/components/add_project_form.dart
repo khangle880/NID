@@ -12,6 +12,7 @@ import 'package:nid/logic/blocs/add_project/add_project_bloc.dart';
 import 'package:nid/logic/blocs/process_state.dart';
 import 'package:nid/logic/repositories/firestore/project_repository.dart';
 import 'package:nid/logic/repositories/user_repository.dart';
+import 'package:nid/logic/utils/helpers/notification_helper.dart';
 import 'package:nid/views/utils/extensions/view_extensions.dart';
 import 'package:nid/views/widgets/list_color_selection.dart';
 
@@ -86,6 +87,9 @@ class _AddProjectFormState extends State<AddProjectForm> {
                               type: CoolAlertType.success,
                               text: 'Add Project Successfully!',
                             );
+
+                            NotificationHelper().sendNotification(
+                                "You have created new project");
                           }
                         },
                         builder: (context, state) => Text(

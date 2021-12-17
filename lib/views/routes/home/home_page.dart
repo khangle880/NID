@@ -6,7 +6,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // 🌎 Project imports:
 import 'package:nid/global/constants/app_constants.dart';
-import 'package:nid/views/routes/exception/exception_page.dart';
 import 'package:nid/views/routes/home/add_menu.dart';
 import 'package:nid/views/routes/home/bottom_app_bar_navigation.dart';
 import 'package:nid/views/routes/home/tabs/profile/profile_page.dart';
@@ -48,7 +47,9 @@ class _HomePageState extends State<HomePage> {
       resizeToAvoidBottomInset: false,
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: GestureDetector(
-        onTap: () => _showAddMenu(),
+        onTap: () {
+          _showAddMenu();
+        },
         child: Container(
           margin: EdgeInsets.only(top: 15.h),
           height: 56.h,
@@ -113,29 +114,3 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-
-
-
-
-
-// appBar: AppBar(
-//         title: Text('Home'),
-//         actions: <Widget>[
-//           
-//         ],
-//       ),
-//       body: Column(
-//         children: <Widget>[
-//           Center(
-//             child: Text("Hello, ${user.email}"),
-//           ),
-//           TextButton(
-//               onPressed: () {
-//                 context
-//                     .read<AuthenticationBloc>()
-//                     .userRepository
-//                     .updatePassword("a123123321", "a123123123");
-//               },
-//               child: Icon(Icons.add)),
-//         ],
-//       ),

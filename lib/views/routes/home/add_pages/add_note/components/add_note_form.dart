@@ -9,6 +9,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 // 🌎 Project imports:
 import 'package:nid/logic/blocs/add_note/add_note_bloc.dart';
 import 'package:nid/logic/blocs/process_state.dart';
+import 'package:nid/logic/utils/helpers/notification_helper.dart';
 import 'package:nid/views/utils/extensions/view_extensions.dart';
 import 'package:nid/views/widgets/list_color_selection.dart';
 import 'package:nid/views/widgets/rounded_button.dart';
@@ -94,6 +95,8 @@ class _AddNoteFormState extends State<AddNoteForm> {
                     type: CoolAlertType.success,
                     text: 'Add Note Successfully!',
                   );
+                  NotificationHelper()
+                      .sendNotification("You have created new note");
                 }
               },
               builder: (context, state) => RoundedButton(

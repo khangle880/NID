@@ -108,7 +108,7 @@ class _MyAppState extends State<MyApp> {
   MaterialApp _buildWithTheme(ThemeData theme) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: "Todo List",
+      title: "NID",
       theme: theme,
       navigatorKey: AppRoutes.appNav,
       initialRoute: AppRouteNames.splashRoute,

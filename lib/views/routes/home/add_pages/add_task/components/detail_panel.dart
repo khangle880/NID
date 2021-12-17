@@ -10,6 +10,7 @@ import 'package:cool_alert/cool_alert.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:nid/logic/utils/helpers/notification_helper.dart';
 import 'package:provider/provider.dart';
 
 // 🌎 Project imports:
@@ -124,6 +125,7 @@ class DetailForm extends StatelessWidget {
               type: CoolAlertType.success,
               text: 'Add Task Successfully!',
             );
+            NotificationHelper().sendNotification("You have created new task");
           }
         },
         builder: (context, state) => RoundedButton(
