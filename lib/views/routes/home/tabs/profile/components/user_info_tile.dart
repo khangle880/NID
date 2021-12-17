@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 // 📦 Package imports:
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 // 🌎 Project imports:
 import 'package:nid/logic/blocs/profile/profile_bloc.dart';
@@ -13,10 +14,68 @@ import 'package:nid/views/widgets/network_avatar.dart';
 import 'descr_text_field.dart';
 import 'name_text_field.dart';
 
-class UserInfoTile extends StatelessWidget {
-  const UserInfoTile({
-    Key? key,
-  }) : super(key: key);
+class UserInfoTile extends StatefulWidget {
+  const UserInfoTile({Key? key}) : super(key: key);
+
+  @override
+  _StateUserInfoTile createState() => _StateUserInfoTile();
+}
+
+class _StateUserInfoTile extends State<UserInfoTile> {
+  RewardedAd? rewardedAd;
+  int rewardedAdAttempts = 0;
+  int maxAttempts = 3;
+
+  void createRewardedAd() {
+    RewardedAd.load(
+        adUnitId: "ca-app-pub-7302379484663726/9930879697",
+        request: AdRequest(),
+        rewardedAdLoadCallback: RewardedAdLoadCallback(onAdLoaded: (ad) {
+          rewardedAd = ad;
+          rewardedAdAttempts = 0;
+        }, onAdFailedToLoad: (error) {
+          rewardedAdAttempts++;
+          rewardedAd = null;
+          print('failed to load ${error.message}');
+
+          if (rewardedAdAttempts <= maxAttempts) {
+            createRewardedAd();
+          }
+        }));
+  }
+
+  ///function to show the rewarded ad after loading it
+  ///this function will get called when we click on the button
+  void showRewardedAd() {
+    if (rewardedAd == null) {
+      print('trying to show before loading');
+      return;
+    }
+
+    rewardedAd!.fullScreenContentCallback = FullScreenContentCallback(
+        onAdShowedFullScreenContent: (ad) => print('ad showed $ad'),
+        onAdDismissedFullScreenContent: (ad) {
+          ad.dispose();
+          createRewardedAd();
+        },
+        onAdFailedToShowFullScreenContent: (ad, error) {
+          ad.dispose();
+          print('failed to show the ad $ad');
+
+          createRewardedAd();
+        });
+
+    rewardedAd!.show(onUserEarnedReward: (ad, reward) {
+      print('reward video ${reward.amount} ${reward.type}');
+    });
+    rewardedAd = null;
+  }
+
+  @override
+  void initState() {
+    createRewardedAd();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -72,6 +131,7 @@ class UserInfoTile extends StatelessWidget {
                 width: 150.w,
                 child: TextButton(
                   onPressed: () {
+                    showRewardedAd();
                     context.read<ProfileBloc>().add(SaveProfile());
                   },
                   child: Text(

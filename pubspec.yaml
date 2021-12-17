@@ -47,6 +47,7 @@ dependencies:
   syncfusion_flutter_datepicker: ^19.2.57
   table_calendar: ^3.0.1
   timeago: ^3.1.0
+  google_mobile_ads: ^1.0.1
 
 flutter_native_splash:
   color: "#FFFFFF"

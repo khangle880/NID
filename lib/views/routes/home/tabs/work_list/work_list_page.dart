@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 // 📦 Package imports:
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:provider/provider.dart';
 
 // 🌎 Project imports:
@@ -43,6 +44,7 @@ class _WorkListPageState extends State<WorkListPage>
   @override
   void initState() {
     super.initState();
+    // loadStaticAd();
     _tabController = TabController(length: _tabList.length, vsync: this);
   }
 

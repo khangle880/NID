@@ -1,5 +1,8 @@
 // 🐦 Flutter imports:
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 class FABBottomAppBarItem {
   FABBottomAppBarItem({required this.iconData, required this.text});
@@ -50,8 +53,103 @@ class FABBottomAppBarState extends State<FABBottomAppBar> {
     });
   }
 
+  late BannerAd staticAd;
+  bool staticAdsLoaded = false;
+  late BannerAd inlineAd;
+  bool inlineAdsLoaded = false;
+
+  void loadStaticAd() {
+    staticAd = BannerAd(
+        size: AdSize.banner,
+        adUnitId: "ca-app-pub-7302379484663726/8633275747",
+        listener: BannerAdListener(onAdLoaded: (ad) {
+          staticAdsLoaded = true;
+          setState(() {});
+        }, onAdFailedToLoad: (ad, error) {
+          ad.dispose();
+        }),
+        request: request);
+
+    staticAd.load();
+  }
+
+  void loadInlineAd() {
+    inlineAd = BannerAd(
+        size: AdSize.banner,
+        adUnitId: "ca-app-pub-7302379484663726/8633275747",
+        listener: BannerAdListener(onAdLoaded: (ad) {
+          inlineAdsLoaded = true;
+          setState(() {});
+        }, onAdFailedToLoad: (ad, error) {
+          ad.dispose();
+        }),
+        request: request);
+
+    inlineAd.load();
+  }
+
+  InterstitialAd? interstitialAd;
+  int interstitialAttempts = 0;
+  int maxAttempts = 3;
+  AdRequest request = AdRequest(
+      // keywords: ['', ''],
+      // contentUrl: '',
+      // nonPersonalizedAds: false
+      );
+
+  void createInterstialAd() {
+    InterstitialAd.load(
+        adUnitId: "ca-app-pub-7302379484663726/4227304489",
+        request: request,
+        adLoadCallback: InterstitialAdLoadCallback(onAdLoaded: (ad) {
+          interstitialAd = ad;
+          interstitialAttempts = 0;
+        }, onAdFailedToLoad: (error) {
+          interstitialAttempts++;
+          interstitialAd = null;
+          print('falied to load ${error.message}');
+
+          if (interstitialAttempts <= maxAttempts) {
+            createInterstialAd();
+          }
+        }));
+  }
+
+  void showInterstitialAd() {
+    Random random = new Random();
+    int randomNumber = random.nextInt(5);
+
+    if (randomNumber != 0) return;
+
+    log(randomNumber);
+
+    if (interstitialAd == null) {
+      print('trying to show before loading');
+      return;
+    }
+
+    interstitialAd!.fullScreenContentCallback = FullScreenContentCallback(
+        onAdShowedFullScreenContent: (ad) => print('ad showed $ad'),
+        onAdDismissedFullScreenContent: (ad) {
+          ad.dispose();
+          createInterstialAd();
+        },
+        onAdFailedToShowFullScreenContent: (ad, error) {
+          ad.dispose();
+          print('failed to show the ad $ad');
+
+          createInterstialAd();
+        });
+
+    interstitialAd!.show();
+    interstitialAd = null;
+  }
+
   @override
   void initState() {
+    loadStaticAd();
+    loadInlineAd();
+    createInterstialAd();
     // Future.delayed(Duration(milliseconds: 1), () => _updateIndex(1));
     super.initState();
   }
@@ -67,13 +165,25 @@ class FABBottomAppBarState extends State<FABBottomAppBar> {
     });
     items.insert(items.length >> 1, _buildMiddleTabItem());
 
-    return BottomAppBar(
-      shape: widget.notchedShape,
-      color: widget.backgroundColor,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: items,
-      ),
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        BottomAppBar(
+          shape: widget.notchedShape,
+          color: widget.backgroundColor,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: items,
+          ),
+        ),
+        if (staticAdsLoaded)
+          Container(
+            alignment: Alignment.center,
+            child: AdWidget(ad: staticAd),
+            width: staticAd.size.width.toDouble(),
+            height: staticAd.size.height.toDouble(),
+          ),
+      ],
     );
   }
 
@@ -109,7 +219,11 @@ class FABBottomAppBarState extends State<FABBottomAppBar> {
       child: SizedBox(
         height: widget.height,
         child: InkWell(
-          onTap: () => onPressed(index),
+          onTap: () {
+            print("Hello World");
+            showInterstitialAd();
+            onPressed(index);
+          },
           child: Container(
             decoration: BoxDecoration(
               border: Border(

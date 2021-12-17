@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 // 📦 Package imports:
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
 // 🌎 Project imports:
@@ -36,6 +37,7 @@ class _TodayTabViewState extends State<TodayTabView>
   @override
   void initState() {
     super.initState();
+
     // scroll to today when open
     WidgetsBinding.instance!.addPostFrameCallback((timeStamp) {
       Future.delayed(
