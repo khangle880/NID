@@ -71,6 +71,7 @@ class NotificationHelper {
           'channelName',
           // 'channelDescription',
           icon: '@mipmap/ic_launcher',
+          importance: Importance.max, priority: Priority.high,
         ),
       ),
       payload: json.encode(message.data),

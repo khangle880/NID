@@ -28,26 +28,30 @@ class WorkListStatistic extends StatelessWidget {
         context.watch<FirestoreBloc<QuickNote>>().allDoc;
 
     final events = allTasks.where((e) => e.dueDate != null);
-    final eventPercent =
-        (events.where((e) => e.isDone).length / events.length * 100).round();
+    final eventPercent = (events.length == 0)
+        ? 100
+        : (events.where((e) => e.isDone).length / events.length * 100).round();
 
     final todo = allTasks.where((e) => e.dueDate == null);
-    final todoPercent =
-        (todo.where((e) => e.isDone).length / todo.length * 100).round();
+    final todoPercent = (todo.length == 0)
+        ? 100
+        : (todo.where((e) => e.isDone).length / todo.length * 100).round();
 
-    final quickNotePercent = (allQuickNotes.where((e) {
-              if (e is Note) {
-                return true;
-              } else {
-                return (e as CheckList)
-                    .list
-                    .where((element) => element.isDone)
-                    .isNotEmpty;
-              }
-            }).length /
-            allQuickNotes.length *
-            100)
-        .round();
+    final quickNotePercent = (allQuickNotes.length == 0)
+        ? 100
+        : (allQuickNotes.where((e) {
+                  if (e is Note) {
+                    return true;
+                  } else {
+                    return (e as CheckList)
+                        .list
+                        .where((element) => element.isDone)
+                        .isNotEmpty;
+                  }
+                }).length /
+                allQuickNotes.length *
+                100)
+            .round();
 
     return Container(
       padding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 24.w),

@@ -137,9 +137,13 @@ class _ProjectItemState extends State<ProjectItem> {
                   ),
                 ),
                 SizedBox(height: 46.h),
-                Text(
-                  widget.item.title,
-                  style: textTheme.subtitle1,
+                Container(
+                  width: 165.w,
+                  child: Text(
+                    widget.item.title,
+                    style: textTheme.subtitle1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
                 ),
                 SizedBox(height: 16.h),
                 Text(
