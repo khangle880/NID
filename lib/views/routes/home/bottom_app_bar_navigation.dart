@@ -1,4 +1,6 @@
 // 🐦 Flutter imports:
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
@@ -56,12 +58,10 @@ class FABBottomAppBarState extends State<FABBottomAppBar> {
   late BannerAd inlineAd;
   bool inlineAdsLoaded = false;
 
-  static const AdRequest request = AdRequest();
-
   void loadStaticAd() {
     staticAd = BannerAd(
         size: AdSize.banner,
-        adUnitId: BannerAd.testAdUnitId,
+        adUnitId: "ca-app-pub-7302379484663726/8633275747",
         listener: BannerAdListener(onAdLoaded: (ad) {
           staticAdsLoaded = true;
           setState(() {});
@@ -76,7 +76,7 @@ class FABBottomAppBarState extends State<FABBottomAppBar> {
   void loadInlineAd() {
     inlineAd = BannerAd(
         size: AdSize.banner,
-        adUnitId: BannerAd.testAdUnitId,
+        adUnitId: "ca-app-pub-7302379484663726/8633275747",
         listener: BannerAdListener(onAdLoaded: (ad) {
           inlineAdsLoaded = true;
           setState(() {});
@@ -88,10 +88,68 @@ class FABBottomAppBarState extends State<FABBottomAppBar> {
     inlineAd.load();
   }
 
+  InterstitialAd? interstitialAd;
+  int interstitialAttempts = 0;
+  int maxAttempts = 3;
+  AdRequest request = AdRequest(
+      // keywords: ['', ''],
+      // contentUrl: '',
+      // nonPersonalizedAds: false
+      );
+
+  void createInterstialAd() {
+    InterstitialAd.load(
+        adUnitId: "ca-app-pub-7302379484663726/4227304489",
+        request: request,
+        adLoadCallback: InterstitialAdLoadCallback(onAdLoaded: (ad) {
+          interstitialAd = ad;
+          interstitialAttempts = 0;
+        }, onAdFailedToLoad: (error) {
+          interstitialAttempts++;
+          interstitialAd = null;
+          print('falied to load ${error.message}');
+
+          if (interstitialAttempts <= maxAttempts) {
+            createInterstialAd();
+          }
+        }));
+  }
+
+  void showInterstitialAd() {
+    Random random = new Random();
+    int randomNumber = random.nextInt(5);
+
+    if (randomNumber != 0) return;
+
+    log(randomNumber);
+
+    if (interstitialAd == null) {
+      print('trying to show before loading');
+      return;
+    }
+
+    interstitialAd!.fullScreenContentCallback = FullScreenContentCallback(
+        onAdShowedFullScreenContent: (ad) => print('ad showed $ad'),
+        onAdDismissedFullScreenContent: (ad) {
+          ad.dispose();
+          createInterstialAd();
+        },
+        onAdFailedToShowFullScreenContent: (ad, error) {
+          ad.dispose();
+          print('failed to show the ad $ad');
+
+          createInterstialAd();
+        });
+
+    interstitialAd!.show();
+    interstitialAd = null;
+  }
+
   @override
   void initState() {
     loadStaticAd();
     loadInlineAd();
+    createInterstialAd();
     // Future.delayed(Duration(milliseconds: 1), () => _updateIndex(1));
     super.initState();
   }
@@ -161,7 +219,11 @@ class FABBottomAppBarState extends State<FABBottomAppBar> {
       child: SizedBox(
         height: widget.height,
         child: InkWell(
-          onTap: () => onPressed(index),
+          onTap: () {
+            print("Hello World");
+            showInterstitialAd();
+            onPressed(index);
+          },
           child: Container(
             decoration: BoxDecoration(
               border: Border(
