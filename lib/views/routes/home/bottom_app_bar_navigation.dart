@@ -1,5 +1,6 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 class FABBottomAppBarItem {
   FABBottomAppBarItem({required this.iconData, required this.text});
@@ -50,8 +51,47 @@ class FABBottomAppBarState extends State<FABBottomAppBar> {
     });
   }
 
+  late BannerAd staticAd;
+  bool staticAdsLoaded = false;
+  late BannerAd inlineAd;
+  bool inlineAdsLoaded = false;
+
+  static const AdRequest request = AdRequest();
+
+  void loadStaticAd() {
+    staticAd = BannerAd(
+        size: AdSize.banner,
+        adUnitId: BannerAd.testAdUnitId,
+        listener: BannerAdListener(onAdLoaded: (ad) {
+          staticAdsLoaded = true;
+          setState(() {});
+        }, onAdFailedToLoad: (ad, error) {
+          ad.dispose();
+        }),
+        request: request);
+
+    staticAd.load();
+  }
+
+  void loadInlineAd() {
+    inlineAd = BannerAd(
+        size: AdSize.banner,
+        adUnitId: BannerAd.testAdUnitId,
+        listener: BannerAdListener(onAdLoaded: (ad) {
+          inlineAdsLoaded = true;
+          setState(() {});
+        }, onAdFailedToLoad: (ad, error) {
+          ad.dispose();
+        }),
+        request: request);
+
+    inlineAd.load();
+  }
+
   @override
   void initState() {
+    loadStaticAd();
+    loadInlineAd();
     // Future.delayed(Duration(milliseconds: 1), () => _updateIndex(1));
     super.initState();
   }
@@ -67,13 +107,25 @@ class FABBottomAppBarState extends State<FABBottomAppBar> {
     });
     items.insert(items.length >> 1, _buildMiddleTabItem());
 
-    return BottomAppBar(
-      shape: widget.notchedShape,
-      color: widget.backgroundColor,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: items,
-      ),
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        BottomAppBar(
+          shape: widget.notchedShape,
+          color: widget.backgroundColor,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: items,
+          ),
+        ),
+        if (staticAdsLoaded)
+          Container(
+            alignment: Alignment.center,
+            child: AdWidget(ad: staticAd),
+            width: staticAd.size.width.toDouble(),
+            height: staticAd.size.height.toDouble(),
+          ),
+      ],
     );
   }
 
