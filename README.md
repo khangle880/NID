@@ -14,7 +14,7 @@ My First Flutter project.
 
 - Account 1:
 -- Email: abc@gmail.com
--- Password: a123123321
+-- Password: a123123123
 
 ### I was provided with a beautifully designed ui
 

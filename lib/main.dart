@@ -20,6 +20,7 @@ import 'logic/repositories/firestore/public_user_info_repository.dart';
 import 'logic/repositories/firestore/quick_note_repository.dart';
 import 'logic/repositories/firestore/task_repository.dart';
 import 'logic/repositories/user_repository.dart';
+import 'logic/utils/helpers/notification_helper.dart';
 import 'routing/app_routes.dart';
 import 'routing/routes.dart';
 
@@ -48,11 +49,21 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   void initState() {
-    FirebaseMessaging.instance.getInitialMessage();
-    FirebaseMessaging.onMessage.listen((event) {});
-    FirebaseMessaging.onMessageOpenedApp.listen((event) {});
-
     super.initState();
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (mounted) {
+      NotificationHelper().init(
+          onInitMessage: (data) {},
+          onBackgroundMessage: (data) {},
+          onLocalNotiMessage: (data) {},
+          onForeGroundMessage: (data) {});
+
+      NotificationHelper().subscribeToTopic("new_task");
+    }
   }
 
   @override
