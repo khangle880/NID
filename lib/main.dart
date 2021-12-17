@@ -1,9 +1,10 @@
 // 🐦 Flutter imports:
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 // 📦 Package imports:
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -14,7 +15,6 @@ import 'package:path_provider/path_provider.dart';
 import 'global/theme/bloc/theme_bloc.dart';
 import 'logic/blocs/authentication/authentication_bloc.dart';
 import 'logic/blocs/simple_bloc_observer.dart';
-import 'logic/models/quick_note.dart';
 import 'logic/repositories/firestore/project_repository.dart';
 import 'logic/repositories/firestore/public_user_info_repository.dart';
 import 'logic/repositories/firestore/quick_note_repository.dart';
@@ -40,7 +40,21 @@ Future main() async {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  void initState() {
+    FirebaseMessaging.instance.getInitialMessage();
+    FirebaseMessaging.onMessage.listen((event) {});
+    FirebaseMessaging.onMessageOpenedApp.listen((event) {});
+
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
