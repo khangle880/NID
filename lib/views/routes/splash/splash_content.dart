@@ -30,8 +30,8 @@ class SplashContent extends StatelessWidget {
         SimpleRiveWidget(
           rivePath: AssetPathConstants.splashRive,
           simpleAnimation: AssetPathConstants.splashSimpleAnimation,
-          width: 250.w,
-          height: 250.w,
+          width: 210.w,
+          height: 180.w,
         ),
         FadeWidget(
           milliseconds: 2500,

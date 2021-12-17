@@ -1,8 +1,7 @@
-[![style: lint](https://img.shields.io/badge/style-lint-4BC0F5.svg)](https://pub.dev/packages/lint)
+# NID - No Idea App
 
-# aking - To Do List - Devera
-
-My First Flutter project.
+My Flutter project.
+With member
 
 ## Getting Started
 
@@ -15,10 +14,6 @@ My First Flutter project.
 - Account 1:
 -- Email: abc@gmail.com
 -- Password: a123123123
-
-### I was provided with a beautifully designed ui
-
-[**Design Link.**](https://www.figma.com/file/Lg4BWGwHR2L3Qwk6s0yIHO/Devera-Aking-To-Do-List-App?node-id=0%3A1)<br>
 
 ## Table of Contents
 
@@ -60,7 +55,8 @@ My First Flutter project.
 - [x] View task detail
 - [x] Share data task, project within (creator, member, assignee)
 - [ ] Handle menu in task detail
-- [ ] On development
+- [x] Add Ads
+- [x] Add Notification
 
 ### Bugs <a name = "bugs"></a>
 
