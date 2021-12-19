@@ -36,99 +36,110 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
 
-    return BlocProvider(
+    return ProxyProvider<AuthenticationBloc, ProfileBloc>(
       create: (_) => ProfileBloc(
           publicUserInfoBloc: context.read<FirestoreBloc<PublicUserInfo>>(),
-          uid: context.watch<AuthenticationBloc>().uid!,
+          uid: context.read<AuthenticationBloc>().uid ?? "1",
           publicUserInfoRepository: context.read<PublicUserInfoRepository>()),
-      child: Scaffold(
-        resizeToAvoidBottomInset: false,
-        appBar: PreferredSize(
-          preferredSize: Size.fromHeight(52.h),
-          child: Container(
-            decoration: BoxDecoration(boxShadow: [
-              BoxShadow(
-                color: Color.fromRGBO(227, 227, 227, 0.5),
-                offset: Offset(0, 2.0),
-                blurRadius: 10.r,
-              )
-            ]),
-            child: AppBar(
-              actions: [
-                IconButton(
-                  icon: Icon(Icons.exit_to_app),
-                  onPressed: () {
-                    BlocProvider.of<AuthenticationBloc>(context)
-                        .add(AuthenticationLoggedOut());
-                  },
+      update: (context, value, previous) {
+        return ProfileBloc(
+            publicUserInfoBloc: context.read<FirestoreBloc<PublicUserInfo>>(),
+            uid: value.uid ?? "1",
+            publicUserInfoRepository: context.read<PublicUserInfoRepository>());
+      },
+      builder: (context, child) => BlocProvider.value(
+        value: context.read<ProfileBloc>(),
+        child: Scaffold(
+          resizeToAvoidBottomInset: false,
+          appBar: PreferredSize(
+            preferredSize: Size.fromHeight(52.h),
+            child: Container(
+              decoration: BoxDecoration(boxShadow: [
+                BoxShadow(
+                  color: Color.fromRGBO(227, 227, 227, 0.5),
+                  offset: Offset(0, 2.0),
+                  blurRadius: 10.r,
+                )
+              ]),
+              child: AppBar(
+                actions: [
+                  IconButton(
+                    icon: Icon(Icons.exit_to_app),
+                    onPressed: () {
+                      BlocProvider.of<AuthenticationBloc>(context)
+                          .add(AuthenticationLoggedOut());
+                    },
+                  ),
+                ],
+                elevation: 0,
+                backgroundColor: ExpandedColor.fromHex("#FFFFFF"),
+                title: Text(
+                  'Profiles',
+                  style: textTheme.subtitle1!.copyWith(
+                      color: ExpandedColor.fromHex("#313131"), fontSize: 20.sp),
                 ),
-              ],
-              elevation: 0,
-              backgroundColor: ExpandedColor.fromHex("#FFFFFF"),
-              title: Text(
-                'Profiles',
-                style: textTheme.subtitle1!.copyWith(
-                    color: ExpandedColor.fromHex("#313131"), fontSize: 20.sp),
-              ),
-              centerTitle: true,
-            ),
-          ),
-        ),
-        body: ListView(
-          padding: EdgeInsets.symmetric(
-            vertical: 24.h,
-            horizontal: 16.w,
-          ),
-          children: [
-            BlocListener<ProfileBloc, ProfileState>(
-              listener: (context, state) {
-                if (state.imageSourceSheetIsVisible) {
-                  _showImageSourceBottomSheet(context);
-                }
-                final formStatus = state.formStatus;
-                if (formStatus is Processing) {
-                  ExpandedFlushbar.loadingFlushbar(context, message: "Updating")
-                      .show(context);
-                }
-                if (formStatus is ProcessFailure) {
-                  ExpandedFlushbar.failureFlushbar(context,
-                          message: formStatus.errorMessage)
-                      .show(context);
-                }
-                if (formStatus is ProcessSuccess) {
-                  log("here");
-                  ExpandedFlushbar.successFlushbar(context,
-                          message: 'Update Successfully!')
-                      .show(context);
-                }
-              },
-              child: Container(
-                padding: EdgeInsets.symmetric(vertical: 15.h, horizontal: 10.w),
-                decoration: BoxDecoration(
-                  color: ExpandedColor.fromHex("#FFFFFF"),
-                  borderRadius: BorderRadius.circular(3.r),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Color.fromRGBO(224, 224, 224, 0.5),
-                      offset: Offset(0, 2),
-                      blurRadius: 10.r,
-                    )
-                  ],
-                ),
-                child: Column(
-                  children: const [
-                    UserInfoTile(),
-                    // SizedBox(height: 25.h),
-                    TaskCounter(),
-                  ],
-                ),
+                centerTitle: true,
               ),
             ),
-            SizedBox(height: 30.h),
-            WorkListCounter(),
-            SizedBox(height: 30.h),
-            WorkListStatistic(),
-          ],
+          ),
+          body: ListView(
+            padding: EdgeInsets.symmetric(
+              vertical: 24.h,
+              horizontal: 16.w,
+            ),
+            children: [
+              BlocListener<ProfileBloc, ProfileState>(
+                listener: (context, state) {
+                  if (state.imageSourceSheetIsVisible) {
+                    _showImageSourceBottomSheet(context);
+                  }
+                  final formStatus = state.formStatus;
+                  if (formStatus is Processing) {
+                    ExpandedFlushbar.loadingFlushbar(context,
+                            message: "Updating")
+                        .show(context);
+                  }
+                  if (formStatus is ProcessFailure) {
+                    ExpandedFlushbar.failureFlushbar(context,
+                            message: formStatus.errorMessage)
+                        .show(context);
+                  }
+                  if (formStatus is ProcessSuccess) {
+                    log("here");
+                    ExpandedFlushbar.successFlushbar(context,
+                            message: 'Update Successfully!')
+                        .show(context);
+                  }
+                },
+                child: Container(
+                  padding:
+                      EdgeInsets.symmetric(vertical: 15.h, horizontal: 10.w),
+                  decoration: BoxDecoration(
+                    color: ExpandedColor.fromHex("#FFFFFF"),
+                    borderRadius: BorderRadius.circular(3.r),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Color.fromRGBO(224, 224, 224, 0.5),
+                        offset: Offset(0, 2),
+                        blurRadius: 10.r,
+                      )
+                    ],
+                  ),
+                  child: Column(
+                    children: const [
+                      UserInfoTile(),
+                      // SizedBox(height: 25.h),
+                      TaskCounter(),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(height: 30.h),
+              WorkListCounter(),
+              SizedBox(height: 30.h),
+              WorkListStatistic(),
+            ],
+          ),
         ),
       ),
     );

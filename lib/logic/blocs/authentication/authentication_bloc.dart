@@ -44,14 +44,14 @@ class AuthenticationBloc
 
   //AuthenticationLoggedIn
   Stream<AuthenticationState> _mapAuthenticationLoggedInToState() async* {
-    yield AuthenticationSuccess((await _userRepository.getUser())!);
+    yield AuthenticationSuccess((_userRepository.getUser())!);
   }
 
   // AuthenticationStarted
   Stream<AuthenticationState> _mapAuthenticationStartedToState() async* {
     final isSignedIn = await _userRepository.isSignedIn();
     if (isSignedIn) {
-      final firebaseUser = await _userRepository.getUser();
+      final firebaseUser = _userRepository.getUser();
       uid = firebaseUser!.uid;
       yield AuthenticationSuccess(firebaseUser);
     } else {
