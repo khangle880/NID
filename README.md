@@ -2,10 +2,10 @@
 
 My Flutter project.
 With member
-18520888 - Lê Nhị Khang
-18520757 - Võ Đoàn Minh Hiếu
-18521051 - Phạm Thăng Long
-18520864 - Hoàng Thế Kỷ
+- 18520888 - Lê Nhị Khang
+- 18520757 - Võ Đoàn Minh Hiếu
+- 18521051 - Phạm Thăng Long
+- 18520864 - Hoàng Thế Kỷ
 
 ## Getting Started
 
