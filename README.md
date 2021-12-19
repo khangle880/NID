@@ -9,7 +9,7 @@ With member
 
 - Account 1:
 -- Email: daiacma880v1@gmail.com
--- Password: a123123321
+-- Password: a123123123
 
 - Account 1:
 -- Email: abc@gmail.com
