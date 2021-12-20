@@ -9,6 +9,8 @@ With member
 
 ## Getting Started
 
+You can find app apk in Release tag in this github
+
 ### Account for test:
 
 - Account 1:
